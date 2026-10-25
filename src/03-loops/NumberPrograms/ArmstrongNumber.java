@@ -42,4 +42,4 @@ public class ArmstrongNumber {
             System.out.println("Not Armstrong Number");
         }
     }
-}+
+}
