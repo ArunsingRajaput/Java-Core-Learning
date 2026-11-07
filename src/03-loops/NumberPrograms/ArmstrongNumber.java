@@ -1,40 +1,52 @@
+import java.util.Scanner;
+
 public class ArmstrongNumber {
+    public static void main1(String[] args) {
+        int num = 153, temp = num, sum = 0;
+        while(temp > 0){
+            int digit = temp % 10;
+            System.out.println(digit);
+            sum += digit * digit * digit;
+            temp /= 10;
+            
+        }
+        if(sum == num){
+            System.out.println("Armstrong Number");
+        } else {
+            System.out.println("Not Armstrong Number");
+        }
+    }
 
     public static void main(String[] args) {
-
-        int number = 153;
-
-        int original = number;
-
-        int temp = number;
-
-        int digits = 0;
-
-        do {
-            digits++;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number : ");
+        int number = sc.nextInt();
+        int temp = number, sum = 0, count = 0;
+    
+        while(temp > 0){
+            count++;
             temp /= 10;
-        } while (temp != 0);
+        }
+
+        // do {
+        //     count++;
+        //     temp /= 10;
+        // } while (temp != 0);
 
         temp = number;
-
-        long sum = 0;
 
         while (temp > 0) {
 
             int digit = temp % 10;
-
-            long power = 1;
-
-            for (int i = 1; i <= digits; i++) {
+            int power = 1;
+            for (int i = 1; i <= count; i++) {
                 power *= digit;
             }
-
             sum += power;
-
             temp /= 10;
         }
 
-        if (number >= 0 && sum == original) {
+        if (number >= 0 && sum == number) {
 
             System.out.println("Armstrong Number");
         } else {
