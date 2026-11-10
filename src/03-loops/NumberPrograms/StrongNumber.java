@@ -1,29 +1,25 @@
+import java.util.Scanner;
 public class StrongNumber {
-
     public static void main(String[] args) {
-
-        int number = 145;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter a number: ");
+        int number = sc.nextInt();
         int original = number;
         int sum = 0;
-
-        do {
-
+        while (number > 0) {
             int digit = number % 10;
-            int factorial = 1;
-
+            int fact = 1;
             for (int i = 1; i <= digit; i++) {
-                factorial *= i;
+                fact *= i;
             }
-
-            sum += factorial;
+            sum += fact;
             number /= 10;
-
-        } while (number > 0);
-
-        if (original >= 0 && sum == original) {
+        }
+        if (sum == original) {
             System.out.println("Strong Number");
         } else {
             System.out.println("Not Strong Number");
         }
+        sc.close();
     }
 }

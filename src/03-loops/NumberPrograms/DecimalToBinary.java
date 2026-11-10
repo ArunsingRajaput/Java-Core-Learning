@@ -1,23 +1,18 @@
+import java.util.Scanner;
 public class DecimalToBinary {
-
     public static void main(String[] args) {
-
-        int decimal = 13;
-        int number = decimal;
-
-        String binary = "";
-
-        do {
-
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter decimal number: ");
+        int number = sc.nextInt();
+        int binary = 0;
+        int base = 1;
+        while (number > 0) {
             int remainder = number % 2;
-
-            binary = remainder + binary;
-
+            binary += remainder * base;
+            base *= 10;
             number /= 2;
-
-        } while (number > 0);
-
-        System.out.println("Decimal: " + decimal);
+        }
         System.out.println("Binary: " + binary);
+        sc.close();
     }
 }

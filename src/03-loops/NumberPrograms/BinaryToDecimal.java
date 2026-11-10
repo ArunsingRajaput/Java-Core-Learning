@@ -1,23 +1,18 @@
+import java.util.Scanner;
 public class BinaryToDecimal {
-
     public static void main(String[] args) {
-
-        String binary = "1101";
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter binary number: ");
+        int binary = sc.nextInt();
         int decimal = 0;
-
-        for (int i = 0; i < binary.length(); i++) {
-
-            int digit = binary.charAt(i) - '0';
-
-            if (digit != 0 && digit != 1) {
-                System.out.println("Invalid Binary Number");
-                return;
-            }
-
-            decimal = decimal * 2 + digit;
+        int base = 1;
+        while (binary > 0) {
+            int digit = binary % 10;
+            decimal += digit * base;
+            base *= 2;
+            binary /= 10;
         }
-
-        System.out.println("Binary: " + binary);
         System.out.println("Decimal: " + decimal);
+        sc.close();
     }
 }
