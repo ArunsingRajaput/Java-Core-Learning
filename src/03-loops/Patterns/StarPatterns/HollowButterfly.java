@@ -6,7 +6,7 @@ public class HollowButterfly {
             for (int j = 1; j <= i; j++) {
                 System.out.print(j == 1 || j == i ? "*" : " ");
             }
-            for (int j = 1; j <= 2 * (n - i); j++) {
+            for (int j = 1; j <= 2*(n-i); j++) {
                 System.out.print(" ");
             }
             for (int j = i; j >= 1; j--) {
